@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TO-DO-LIST</title>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <div class="box" id="heading">
+            <h1> <%= fulldate %> </h1>
+        </div>
+
+        <div class="box">
+            <form action="/delete" method="post">
+                <% for(var i=0; i<key.length && key.length!=0; i++) {%>
+                    <div class="item">
+                        <input type="checkbox" name="clicked" value="<%= key[i]._id %>" onchange="this.form.submit()">
+                        <% if(i<2) { %>
+                            <p><%= key[i].item %></p>
+                        <% }
+                        else { %>
+                            <p> <%= (i-1) + ". "+ key[i].item[0].toUpperCase()+ (key[i].item.slice(1,key[i].item.length).toLowerCase() ) %> </p>
+                        <% } %>
+                    </div>
+                <% } %>
+                <input type="hidden" name="heading" value="<%= fulldate%>"></input> 
+            </form>
+
+            <form class="item" action="/" method="post">
+                <input type="text" name="notes" placeholder="Add your new item" autocomplete="off">
+                <button type="submit" name="button" value="<%= fulldate %>"> +</button>
+            </form>
+        </div>
+        
+        
+    </body>
+</html>
