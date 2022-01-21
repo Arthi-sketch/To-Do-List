@@ -7,6 +7,8 @@ A basic CRUD app will help to make,
 * HTML
 * CSS 
 * NODE JS
+* Expess
+* EJS
 * MONGODB
 # Link
 https://safe-gorge-50502.herokuapp.com/
